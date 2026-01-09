@@ -1,3 +1,4 @@
+alert("script.js is working")
 const form = document.getElementById("signupForm");
 const message = document.getElementById("message");
 const togglePassword = document.getElementById("togglePassword");
@@ -61,4 +62,5 @@ form.reset();
 function showMessage(text, color) {
     message.style.color = color;
     message.textContent = text;
+
 }
