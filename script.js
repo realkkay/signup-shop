@@ -1,4 +1,9 @@
-alert("script.js is working")
+const form = document.getElementById("signupForm");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  window.open("data.html", "_blank");
+});
 const form = document.getElementById("signupForm");
 const message = document.getElementById("message");
 const togglePassword = document.getElementById("togglePassword");
@@ -64,3 +69,4 @@ function showMessage(text, color) {
     message.textContent = text;
 
 }
+
