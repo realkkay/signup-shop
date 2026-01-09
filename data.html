@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real_kay么 Data Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Real_kay么 Data Hub</h1>
+    <p>Affordable Internet Data Bundles</p>
+</header>
+
+<section class="plans">
+
+    <!-- MTN -->
+    <div class="card mtn">
+        <h2>MTN Data</h2>
+        <input type="tel" placeholder="Your phone number" class="phoneInput">
+
+        <p>1GB – GHS 4.75</p>
+        <button onclick="buy('MTN', '1GB', '4.75', this)">Buy Now</button>
+
+        <p>2GB – GHS 9.5</p>
+        <button onclick="buy('MTN', '2GB', '9.5', this)">Buy Now</button>
+
+        <p>3GB – GHS 13.5</p>
+        <button onclick="buy('MTN', '3GB', '13.5', this)">Buy Now</button>
+
+        <p>4GB – GHS 18.5</p>
+        <button onclick="buy('MTN', '4GB', '18.5', this)">Buy Now</button>
+    </div>
+
+    <!-- Telecel -->
+    <div class="card telecel">
+        <h2>Telecel Data</h2>
+        <input type="tel" placeholder="Your phone number" class="phoneInput">
+
+        <p>2GB – GHS 12</p>
+        <button onclick="buy('Telecel', '2GB', '12', this)">Buy Now</button>
+
+        <p>3GB – GHS 18</p>
+        <button onclick="buy('Telecel', '3GB', '18', this)">Buy Now</button>
+
+        <p>4GB – GHS 27</p>
+        <button onclick="buy('Telecel', '4GB', '27', this)">Buy Now</button>
+
+        <p>5GB – GHS 38.5</p>
+        <button onclick="buy('Telecel', '5GB', '38.5', this)">Buy Now</button>
+    </div>
+
+    <!-- AirtelTigo -->
+    <div class="card tigo">
+        <h2 class="aiteltigo">AirtelTigo Data</h2>
+        <input type="tel" placeholder="Your phone number" class="phoneInput">
+
+        <p>1GB – GHS 15</p>
+        <button onclick="buy('AirtelTigo', '1GB', '15', this)">Buy Now</button>
+
+        <p>2GB – GHS 25</p>
+        <button onclick="buy('AirtelTigo', '2GB', '25', this)">Buy Now</button>
+
+        <p>3GB – GHS 35</p>
+        <button onclick="buy('AirtelTigo', '3GB', '35', this)">Buy Now</button>
+
+        <p>4GB – GHS 45</p>
+        <button onclick="buy('AirtelTigo', '4GB', '45', this)">Buy Now</button>
+    </div>
+
+</section>
+
+<footer>
+    <p>©️ 2026 Real_kay么 Data Hub | Contact: 0554322376</p>
+</footer>
+
+<!-- WhatsApp Script -->
+<script>
+function buy(network, bundle, price, button) {
+    // find the phone input in the same card
+    const card = button.closest('.card');
+    const phoneInput = card.querySelector('.phoneInput');
+    const customerPhone = phoneInput.value.trim();
+
+    if (customerPhone === "") {
+        alert("Please enter your phone number");
+        return;
+    }
+
+    const sellerPhone = "233554322376"; // your WhatsApp number
+    const message = `Hello, I want to buy ${bundle} ${network} Data for GHS ${price}. My phone number: ${customerPhone}`;
+    const url = `https://wa.me/${sellerPhone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
